@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>test</title>
+</head>
+<body>
+
+    <form id="form_demo_01" method="post" action="">
+        <input type="text" />
+        <input type="submit" name="submitbutton" value="submitvalue" />
+    </form>
+
+    <form id="form_demo_02" method="get" action="">
+        <input type="text" />
+        <input type="submit" />
+    </form>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/ajaxSubmitForm.js"></script>
+
+    <script type="text/javascript">
+        
+        $("form:eq(0)").ajaxSubmitForm({
+            error_event: function(){
+                console.log(1);
+            }
+        });
+
+        $("form:eq(1)").ajaxSubmitForm({
+            error_callback: function(e){
+                console.log(data);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
+
